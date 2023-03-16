@@ -1,0 +1,112 @@
+
+.xyz-about{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:start;
+}
+
+.xyz-about-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-medium);
+    // background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    border: 5px solid var(--color-dark);
+    // border: 5px solid #46aef7;
+    overflow: hidden;
+    position:relative;
+    object-fit:cover;
+
+    img{
+        width: 35rem;
+    }
+}
+
+.xyz-about-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    margin-right: 2rem;
+
+    h1{
+        font-size: 5rem;
+        font-weight: 700;
+        font-family:var(--font-bold);
+        // color: #146C94;
+        color: #19A7CE;
+    }
+}
+
+.xyz-about-content-welcome{
+    font-size: 22px;
+    font-family: var(--font-para);
+    color:var(--color-orange);
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.xyz-about-contect-description{
+    font-size: 17px;
+    line-height: 28px;
+    font-family: var(--font-para2);
+    color:#515A5A;
+}
+
+@media screen and (max-width: 900px){
+    .xyz-about{
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .xyz-about-content{
+   margin: 0;
+    
+        h1{
+            font-size: 4rem;
+            font-weight: 700;
+
+        }
+    }
+
+    .xyz-about-content-welcome{
+        font-size: 19px;
+        line-height: 15px;
+    }
+    
+    .xyz-about-contect-description{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .xyz-about-image{
+        align-items: center;
+        margin-top: 2rem;
+    
+        img{
+            width: 25rem;
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    .xyz-about-content{
+             h1{
+                 font-size: 3.5rem;
+             }
+         }
+         
+    .xyz-about-content-welcome{
+        font-size: 17px;
+        line-height: 14px;
+    }
+
+    .xyz-about-image{
+        img{
+            width: 20rem;
+        }
+    }
+}

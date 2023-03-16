@@ -1,64 +1,78 @@
-.xyz_navbar {
+.navbar-full {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  font-family: var(--font-bold);
+  font-family: var(--font-para2);
   padding: 2.5rem 3.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: sticky;
+  background: white;
 }
 
-.xyz_navbar-links_logo {
-  font-size: 25px;
-  color: yellow;
-  font-weight: 800;
+.navbar-pc {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navbar-pc h1 {
+  color: black;
+}
+.navbar-pc span {
+  color: var(--color-dark);
 }
 
-.xyz_navbar-links {
+.navbar-pc-links {
   display: flex;
   align-items: center;
-  flex-direction: row;
+  font-weight: lighter;
+  color: gray;
+  margin-left: 20vh;
+  font-size: 15px;
   gap: 1rem;
-  color: var(--color-dark);
-  font-weight: 600;
-  font-size: 20px;
 }
-.xyz_navbar-links button {
+.navbar-pc-links p {
+  color: gray;
+}
+.navbar-pc-links button {
   color: white;
   background-color: var(--color-dark);
   border: none;
-  font-weight: bold;
+  font-weight: lighter;
   border-radius: 2px;
   font-size: 15px;
-  padding: 0.5rem 0.7rem;
+  padding: 0.5rem 0.5rem;
 }
 
-.xyz_navbar-menu {
+.navbar-mob {
   display: none;
   cursor: pointer;
 }
 
-.xyz_navbar-menu_container {
+.navbar-mob-container {
   display: flex;
   flex-direction: column;
   background-color: #ECEFF1;
-  padding: 1rem 1rem;
+  padding: 1rem;
+  height: 70vh;
+  width: 65vw;
   position: absolute;
   justify-content: start;
   align-items: flex-start;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.xyz_navbar-menu_container-links {
+.navbar-mob-container-links {
   display: flex;
   flex-direction: column;
 }
-.xyz_navbar-menu_container-links p {
+.navbar-mob-container-links p {
+  margin: 1rem auto;
   font-size: 17px;
   font-weight: 500;
   line-height: 30px;
 }
-
-.xyz_navbar-menu_container-links-sign button {
+.navbar-mob-container-links button {
   color: white;
   background-color: var(--color-dark);
   border: none;
@@ -68,18 +82,26 @@
   padding: 0.3rem 0.5rem;
 }
 
+.navbar-mob-container-svg {
+  align-self: flex-end;
+  border-radius: 100%;
+}
+
 @media screen and (max-width: 650px) {
-  .xyz_navbar {
+  .navbar-full {
     padding: 2rem 2rem;
   }
-  .xyz_navbar-menu {
+  .navbar-pc {
+    justify-content: space-between;
+  }
+  .navbar-mob {
     display: flex;
   }
-  .xyz_navbar-links {
+  .navbar-pc-links {
     display: none;
   }
-  .xyz_navbar-menu_container {
+  .navbar-mob-container {
     top: 13vh;
-    right: 1vw;
+    right: 20vw;
   }
 }/*# sourceMappingURL=navbar.css.map */
