@@ -1,12 +1,12 @@
-import './App.css'
-import Navbar from './Components/navbar/Navbar'
+import './App.css';
+import Navbar from './Components/navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Pages/home/Home'
-import About from './Pages/about/About'
-import Store from './Pages/store/Store'
-import Contact from './Pages/contact/Contact'
-import ErrorPage from './Pages/errorPage/ErrorPage'
-
+import Home from './Pages/home/Home';
+import About from './Pages/about/About';
+import Store from './Pages/store/Store';
+import Contact from './Pages/contact/Contact';
+import ErrorPage from './Pages/errorPage/ErrorPage';
+import Footer from './Components/footer/Footer';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
+      <Footer />  
      </Router> 
     </>
   );
