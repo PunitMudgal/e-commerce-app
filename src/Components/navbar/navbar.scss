@@ -1,11 +1,15 @@
 .navbar-full{
     display: flex;
+    width: 100%;
     flex-direction: row;
     align-items: center;
     font-family: var(--font-para2);
-    padding: 2.5rem 3.5rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
     position: sticky;
+    top: 0;
+    padding: 2.5rem 3.5rem;
+    z-index: 10;
     background: white;
 }
 

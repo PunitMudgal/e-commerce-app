@@ -1,11 +1,14 @@
 .navbar-full {
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   font-family: var(--font-para2);
-  padding: 2.5rem 3.5rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: sticky;
+  top: 0;
+  padding: 2.5rem 3.5rem;
+  z-index: 10;
   background: white;
 }
 
@@ -57,7 +60,7 @@
   height: 70vh;
   width: 65vw;
   position: absolute;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-start;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
