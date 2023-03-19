@@ -1,1 +1,12 @@
-/*# sourceMappingURL=errorPage.css.map */
+.errorpage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.errorpage img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}/*# sourceMappingURL=errorPage.css.map */

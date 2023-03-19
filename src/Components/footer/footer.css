@@ -41,11 +41,33 @@
   color: rgb(61, 60, 60);
   margin: auto 2vh;
   padding: 4px;
-  background-color: var(--color-extraLight);
   border: 3px solid var(--color-dark);
   border-radius: 100%;
 }
 .social-icon:hover {
   color: black;
   border-color: var(--color-medium);
+}
+
+@media screen and (max-width: 800px) {
+  .footer-full {
+    flex-direction: column;
+    border-top-left-radius: 150px 80px;
+  }
+  .footer-content {
+    align-self: center;
+  }
+  .footer-content h5 {
+    font-size: 20px;
+  }
+  .footer-content p {
+    font-size: 12px;
+  }
+  .footer-content .footer-content-copyright {
+    font-size: 12px;
+  }
+  .footer-icons {
+    align-self: center;
+    margin-top: 3rem;
+  }
 }/*# sourceMappingURL=footer.css.map */
