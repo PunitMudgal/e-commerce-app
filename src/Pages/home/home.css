@@ -39,7 +39,7 @@
   font-weight: medium;
   margin-bottom: 3vh;
   line-height: 90px;
-  color: #D32F2F;
+  color: black;
 }
 .home-content a {
   display: flex;
@@ -85,7 +85,6 @@
   .home-content h1 {
     font-size: 40px;
     line-height: 55px;
-    color: #3F0071;
   }
   .home-content a {
     padding: 10px;
