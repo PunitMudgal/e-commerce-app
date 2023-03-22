@@ -7,7 +7,7 @@ import Store from './Pages/store/Store';
 import Contact from './Pages/contact/Contact';
 import ErrorPage from './Pages/errorPage/ErrorPage';
 import Footer from './Components/footer/Footer';
-
+//  api = https://api.pujakaitem.com/api/products;
 function App() {
   return (
     <>

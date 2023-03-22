@@ -3,6 +3,7 @@ import "./home.css";
 import Fashion from "../../assets/fashion-white-bg2.jpg";
 import Cards from "../../Components/cards/Cards";
 import {FaShippingFast, FaUndo, FaDollarSign, FaStopwatch} from 'react-icons/fa';
+import FeatureProducts from "../../Components/featureProducts/FeatureProducts";
 // import Fashion from '../../assets/fashion-purple-bg.jpg'
 // import Fashion from '../../assets/fashion-blue-bg.jpg'
 
@@ -49,6 +50,7 @@ export default function Home() {
         <a href="/">SHOP NOW</a>
       </div>
 
+<FeatureProducts/>
 
 {/* perks */}
 <div className="home-perks section-margin">

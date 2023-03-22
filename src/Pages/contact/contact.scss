@@ -29,7 +29,7 @@
 
     span{
         font-family: var(--font-para3);
-        font-size: 15px;
+        font-size: 13px;
         text-transform: uppercase;
 
     }
@@ -50,6 +50,18 @@
         background-color: transparent;
         border: none;
         border-bottom: 2px solid gray;
+    }
+
+    button{
+        padding: 0.8rem;
+        font-family: var(--font-para3);
+        background: var(--color-medium);
+        margin-top: 5px;
+        outline:invert;
+        border: none;
+        color: white;
+        transform: all 1.5s easy;
+        border-radius: 5px;
     }
 }
 
