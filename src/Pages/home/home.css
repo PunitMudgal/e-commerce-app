@@ -11,6 +11,10 @@
   width: 100vw;
 }
 
+.home-gradient {
+  display: none;
+}
+
 .home-content {
   position: absolute;
   display: flex;

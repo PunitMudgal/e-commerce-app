@@ -2,6 +2,7 @@ import React from "react";
 import loading from '../../assets/loding.gif';
 import { useProductContext } from "../../context/productContext";
 import './featureProducts.css';
+import Product from '../product/Product'
 
 export default function FeatureProducts() {
   const { isLoading, featureProducts } = useProductContext();
@@ -22,10 +23,7 @@ export default function FeatureProducts() {
       ) : (
         featureProducts.map((prod) => {
           return (
-            <div className="feature-image">
-              <img src={prod.image} alt="ImgNotFound" />
-              <div className="feature-image-gradient"></div>
-            </div>
+          <Product key={prod.id} {...prod}  />
           );
         })
       )}

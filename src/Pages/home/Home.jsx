@@ -37,7 +37,7 @@ export default function Home() {
       <div className="home-image">
         <img src={Fashion} alt="fashion-Lady" />
       {/* black gradient */}
-      <div className="gradient" />
+      <div className="home-gradient" />
       </div>
 
       {/* text */}
