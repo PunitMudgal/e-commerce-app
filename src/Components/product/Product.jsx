@@ -9,7 +9,7 @@ export default function Product(props) {
     <img src={props.image} alt="ImgNotFound" />
     <div className='feature-content'>
     <p className='feature-image-name'>{props.name}</p>
-    <p className='feature-image-price'>&#8377;{props.price}</p>
+    <p className='feature-image-price'>&#8377;{props.price/100}</p>
     </div>
     <figcaption className='feature-gradient'></figcaption>
   </NavLink>

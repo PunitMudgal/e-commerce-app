@@ -18,6 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/store' element={<Store />} />
+          {/* path of singleProduct connected to every product user click on */}
           <Route path="/singleProduct/:id" element={<SingleProduct />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<ErrorPage />} />

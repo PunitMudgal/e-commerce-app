@@ -6,7 +6,7 @@ import Product from '../product/Product'
 
 export default function FeatureProducts() {
   const { isLoading, featureProducts } = useProductContext();
-  console.log("feature Products", featureProducts);
+  // console.log("feature Products", featureProducts);
 
   return (
     <>

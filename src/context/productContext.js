@@ -11,6 +11,8 @@ const initialState = {
   isError: false,
   products: [],
   featureProducts: [],
+  isSingleLoading: false,
+  singleProduct: {},
 };
 
 const AppProvider = ({ children }) => {
@@ -18,6 +20,7 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   //1. first we fetch the data from the apikey and put in into the context hook to access in another component.
+  //! fetching featureProduct data
   const getProducts = async (url) => {
     dispatch({ type: "SET_LOADING" }); 
     //first dispatch the loading then data and then error if any.
@@ -31,16 +34,30 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  //! single product data 
+  const getSingleProduct = async(url) => {
+    dispatch({type: "SET_SINGLE_LOADING"})
+    try{
+      const res = await axios.get(url);
+      const singleProduct = await res.data;
+      dispatch({type:"SET_SINGLE_PRODUCT_DATA", payload: singleProduct})
+    }
+    catch (error){
+    dispatch({type: "SINGLE_PRODUCT_ERROR"})
+    }
+  }
+
   useEffect(() => {
     getProducts(apiKey);
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, getSingleProduct }}>{children}</AppContext.Provider>
   );
 };
 
 // custom hooks, can use it by calling the function.
+//? passed the value of context hook in this function, the value can be used by calling this function in any component or page
 const useProductContext = () => {
   return useContext(AppContext);
 };
