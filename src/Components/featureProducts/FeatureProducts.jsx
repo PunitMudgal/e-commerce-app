@@ -1,8 +1,8 @@
 import React from "react";
-import loading from '../../assets/loding.gif';
 import { useProductContext } from "../../context/productContext";
-import './featureProducts.css';
-import Product from '../product/Product'
+import "./featureProducts.css";
+import Product from "../product/Product";
+import Loading from "../loading/Loading";
 
 export default function FeatureProducts() {
   const { isLoading, featureProducts } = useProductContext();
@@ -10,24 +10,20 @@ export default function FeatureProducts() {
 
   return (
     <>
-    <div className="feature-full section-margin">
-      <div className="feature-text">
-        <p>Check Now</p>
-        <h3>OUR FEATURE SERVICES</h3>
-      </div>
-      <div className="feature-image-all">
-      {isLoading ? (
-        <div className="feature-loading-img">
-          <img src={loading} alt="loading" />
+      <div className="feature-full section-margin">
+        <div className="feature-text">
+          <p>Check Now</p>
+          <h3>OUR FEATURE SERVICES</h3>
         </div>
-      ) : (
-        featureProducts.map((prod) => {
-          return (
-          <Product key={prod.id} {...prod}  />
-          );
-        })
-      )}
-      </div>
+        <div className="feature-image-all">
+          {isLoading ? (
+            <Loading />
+          ) : (
+            featureProducts.map((prod) => {
+              return <Product key={prod.id + prod.name} item={{ ...prod }} />;
+            })
+          )}
+        </div>
       </div>
     </>
   );

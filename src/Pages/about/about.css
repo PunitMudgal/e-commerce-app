@@ -32,7 +32,10 @@
 .xyz-about-content h1 {
   font-size: 5rem;
   font-weight: 700;
-  font-family: var(--font-bold);
+  font-family: var(--font-para3);
+  color: black;
+}
+.xyz-about-content h1 span {
   color: #19A7CE;
 }
 

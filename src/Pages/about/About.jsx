@@ -9,7 +9,7 @@ export default function About() {
     <div className='xyz-about section-padding'>
       <div className='xyz-about-content slide-in-left'>
       <p className='xyz-about-content-welcome'>Welcome To</p>
-      <h1>XYZ Shopping</h1>
+      <h1>FASHION<span>CLUB</span></h1>
       <p className='xyz-about-contect-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore architecto, placeat qui cum asperiores laboriosam mollitia molestiae facilis modi illum aliquam rem corporis harum nemo numquam vitae est quod</p>
       </div>
       <div className='xyz-about-image box-shadow2 slide-in-right'>
