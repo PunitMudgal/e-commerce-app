@@ -68,6 +68,8 @@
 .navbar-mob-container-links {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .navbar-mob-container-links p {
   margin: 1rem auto;
@@ -82,7 +84,7 @@
   font-weight: bold;
   border-radius: 2px;
   font-size: 11px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.4rem;
 }
 
 .navbar-mob-container-svg {

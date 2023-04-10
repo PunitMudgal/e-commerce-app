@@ -8,6 +8,8 @@ import Contact from "./Pages/contact/Contact";
 import ErrorPage from "./Pages/errorPage/ErrorPage";
 import Footer from "./Components/footer/Footer";
 import SingleProduct from "./Pages/singleProduct/SingleProduct";
+import Cart from "./Pages/cart/Cart";
+
 //  api = https://api.pujakaitem.com/api/products;
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           {/* path of singleProduct connected to every product user click on */}
           <Route path="/singleProduct/:id" element={<SingleProduct />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

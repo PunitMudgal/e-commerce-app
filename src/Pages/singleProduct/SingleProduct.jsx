@@ -62,10 +62,10 @@ export default function SingleProduct() {
                 <FaCartPlus />
                 Add To Cart
               </button>
-              <button className="button-2">
+              <Link to='/cart' className="button-2">
                 <FaShoppingCart />
                 Go To Cart
-              </button>
+              </Link>
             </span>
           </div>
         </div>

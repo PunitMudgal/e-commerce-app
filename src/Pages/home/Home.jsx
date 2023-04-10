@@ -8,6 +8,7 @@ import {
   FaDollarSign,
   FaStopwatch,
 } from "react-icons/fa";
+import {Link} from 'react-router-dom'
 // import FeatureProducts from "../../Components/featureProducts/FeatureProducts";
 // import Fashion from '../../assets/fashion-purple-bg.jpg'
 // import Fashion from '../../assets/fashion-blue-bg.jpg'
@@ -51,7 +52,7 @@ export default function Home() {
           Get up to 30% Off
           <br /> New Arrivals
         </h1>
-        <a href="/">SHOP NOW</a>
+        <Link to="/store">SHOP NOW</Link>
       </div>
 
       {/* <FeatureProducts/> */}
