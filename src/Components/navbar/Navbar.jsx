@@ -3,19 +3,28 @@ import "./navbar.css";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
-
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import {auth, provider} from '../../firebase'
-
-
-
+import { AuthUser } from "../../context/AuthContext";
+import avatar from "../../assets/user.jpg";
 
 export default function Navbar() {
+  const { googleSignIn, user, logOut } = AuthUser();
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const loginWithGoogle = () => {
-    auth.signInWithPopup(provider);
-  }
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleLogOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <section className="navbar-full">
@@ -39,11 +48,21 @@ export default function Navbar() {
           <p>
             <Link to="/contact">CONTACT</Link>
           </p>
-          {/* <Link to='/login'>Login</Link> */}
-          <button onClick={loginWithGoogle}>SIGN UP</button>
-          <Link to='/cart'>
+
+          <Link to="/cart">
             <FaShoppingCart size={25} />
           </Link>
+
+          <div onClick={handleGoogleSignIn} className="navbar-userDetails">
+            <img src={user?.email ? user?.photoURL : avatar} alt="avatar" />
+          </div>
+          
+          {user?.email ? (
+            <button className="navbar-logout-btn" onClick={handleLogOut}>
+              Logout
+            </button>
+          ) : ''}
+
         </div>
       </div>
 
@@ -54,6 +73,10 @@ export default function Navbar() {
           color="#8E24AA"
           onClick={() => setToggleMenu(true)}
         />
+
+        <div onClick={handleGoogleSignIn} className="navbar-userDetails-mob">
+          <img src={user?.email ? user?.photoURL : avatar} alt="avatar" />
+        </div>
 
         {toggleMenu && (
           <div className="navbar-mob-container">
@@ -77,14 +100,25 @@ export default function Navbar() {
               <p>
                 <Link to="/contact">CONTACT</Link>
               </p>
-              {/* <p>
-              <Link to='/login'>Login</Link>
-              </p> */}
-              <button type="button">Sign up</button>   
+              {user?.email ? (
+                <button
+                  className="navbar-logout-btn-mob"
+                  onClick={handleLogOut}
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  className="navbar-login-btn-mob"
+                  onClick={handleGoogleSignIn}
+                >
+                  SIGN UP
+                </button>
+              )}
               <p>
-              <Link to='/cart'>
-                <FaShoppingCart size={25} />
-              </Link>
+                <Link to="/cart">
+                  <FaShoppingCart size={25} />
+                </Link>
               </p>
             </div>
           </div>

@@ -9,11 +9,13 @@ import ErrorPage from "./Pages/errorPage/ErrorPage";
 import Footer from "./Components/footer/Footer";
 import SingleProduct from "./Pages/singleProduct/SingleProduct";
 import Cart from "./Pages/cart/Cart";
+import { AuthContextProvider } from "./context/AuthContext";
 
 //  api = https://api.pujakaitem.com/api/products;
 function App() {
   return (
     <>
+    <AuthContextProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -28,6 +30,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      </AuthContextProvider>
     </>
   );
 }

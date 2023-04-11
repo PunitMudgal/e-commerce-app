@@ -37,7 +37,8 @@
 .navbar-pc-links p {
   color: gray;
 }
-.navbar-pc-links button {
+.navbar-pc-links .navbar-login-btn {
+  cursor: pointer;
   color: white;
   background-color: var(--color-dark);
   border: none;
@@ -45,6 +46,29 @@
   border-radius: 2px;
   font-size: 15px;
   padding: 0.5rem 0.5rem;
+}
+.navbar-pc-links .navbar-logout-btn {
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255, 34, 34, 0.779);
+  border: none;
+  font-weight: lighter;
+  border-radius: 2px;
+  font-size: 15px;
+  padding: 0.5rem 0.5rem;
+}
+
+.navbar-userDetails {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.navbar-userDetails img {
+  height: 36px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 100%;
 }
 
 .navbar-mob {
@@ -65,6 +89,18 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+.navbar-userDetails-mob {
+  display: flex;
+  align-items: center;
+  margin: 0 2px 0 8px;
+}
+.navbar-userDetails-mob img {
+  height: 30px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 100%;
+}
+
 .navbar-mob-container-links {
   display: flex;
   flex-direction: column;
@@ -77,9 +113,18 @@
   font-weight: 500;
   line-height: 30px;
 }
-.navbar-mob-container-links button {
+.navbar-mob-container-links .navbar-login-btn-mob {
   color: white;
   background-color: var(--color-dark);
+  border: none;
+  font-weight: bold;
+  border-radius: 2px;
+  font-size: 11px;
+  padding: 0.4rem;
+}
+.navbar-mob-container-links .navbar-logout-btn-mob {
+  color: white;
+  background-color: red;
   border: none;
   font-weight: bold;
   border-radius: 2px;
