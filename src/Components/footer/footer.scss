@@ -6,9 +6,12 @@
     border-top: 3px solid var(--color-light);
     border-top-left-radius: 250px 100px;
     border-top-right-radius: 3px;
-    position: relative;
+    position:relative;
     width: 100%;
-    bottom: 0;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
 }
 
 .footer-content{

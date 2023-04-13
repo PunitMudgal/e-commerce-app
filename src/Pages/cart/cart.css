@@ -1,1 +1,47 @@
-/*# sourceMappingURL=cart.css.map */
+.cart-full {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+.cart-full h1 {
+  font-family: var(--font-para3);
+  color: var(--color-medium);
+  font-size: 45px;
+}
+.cart-full h5 {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: green;
+  margin-bottom: 3rem;
+  font-size: 20px;
+  font-family: var(--font-head);
+}
+.cart-full h5 span {
+  font-size: 35px;
+  margin-left: 5px;
+  color: rgba(177, 25, 177, 0.765);
+}
+.cart-full h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-family: var(--font-para3);
+  color: darkorange;
+}
+
+@media screen and (max-width: 800px) {
+  .cart-full {
+    padding: 2rem 1.5rem;
+  }
+  .cart-full h1 {
+    font-size: 33px;
+  }
+  .cart-full h5 {
+    font-size: 18px;
+  }
+  .cart-full h5 span {
+    font-size: 25px;
+  }
+}/*# sourceMappingURL=cart.css.map */

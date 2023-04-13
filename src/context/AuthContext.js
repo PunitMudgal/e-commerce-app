@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase";
 
+
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
@@ -20,7 +21,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const logOut = () => {
     signOut(auth);
-  }
+  };
 
   // to check the state whether user is siged in or not
   useEffect(() => {
@@ -32,9 +33,10 @@ export const AuthContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-console.log('user2',user)
+  console.log(user);
+
   return (
-    <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
+    <AuthContext.Provider value={{ googleSignIn, logOut, user}}>
       {children}
     </AuthContext.Provider>
   );

@@ -52,9 +52,12 @@
   display: flex;
   gap: 5px;
 }
-.singleItem-content button {
+.singleItem-content a, .singleItem-content button {
   display: flex;
   align-items: center;
+  background: transparent;
+  border: 2px solid var(--color-orange);
+  border-radius: 3px;
   padding: 0.8rem;
   font-size: 16px;
   font-family: var(--font-bold);

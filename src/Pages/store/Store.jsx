@@ -50,7 +50,7 @@ export default function Store() {
               <button onClick={() => filterProduct("jewelery")}>Jewelery</button>
               <button onClick={() => filterProduct("electronics")}>Electronics</button>
             </div>
-            <div  className="store-content-products">
+            <div className="store-content-products">
               {filter.map((products) => {
                 return (
                     <div key={products.id} className="product-card">
@@ -62,7 +62,7 @@ export default function Store() {
                           <h4>{products.title}</h4>
                           <p>$ {products.price}/- only</p>
                         </div>
-                        <button><Link to={`/singleProduct/${products.id}`}>Buy Now</Link></button>
+                        <Link to={`/singleProduct/${products.id}`}>Buy Now</Link>
                       </div>
                     </div>
                 );

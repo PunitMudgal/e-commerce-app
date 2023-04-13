@@ -1,18 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
+import {IoLogOutOutline} from 'react-icons/io5';
 import { Link } from "react-router-dom";
 import { AuthUser } from "../../context/AuthContext";
 import avatar from "../../assets/user.jpg";
+import { setDoc, doc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export default function Navbar() {
   const { googleSignIn, user, logOut } = AuthUser();
   const [toggleMenu, setToggleMenu] = useState(false);
 
+// const initializeFirestore = () => {
+//   setDoc(doc(db, "users", user.displayName), {
+//     savedItems: [],
+//   });
+// }
+
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
+      setDoc(doc(db, "users", user.displayName), {
+        savedItems: [],
+      });
     } catch (error) {
       console.log(error);
     }
@@ -25,6 +37,10 @@ export default function Navbar() {
       console.log(error);
     }
   };
+
+  // useEffect(() => {
+  //   initializeFirestore();
+  // },[])
 
   return (
     <section className="navbar-full">
@@ -49,20 +65,24 @@ export default function Navbar() {
             <Link to="/contact">CONTACT</Link>
           </p>
 
-          <Link to="/cart">
+          <Link to={user?.email ? "/cart" : "#"}>
             <FaShoppingCart size={25} />
           </Link>
 
-          <div onClick={handleGoogleSignIn} className="navbar-userDetails">
+          <div
+            onClick={user?.email ? null : handleGoogleSignIn}
+            className="navbar-userDetails"
+          >
             <img src={user?.email ? user?.photoURL : avatar} alt="avatar" />
           </div>
-          
+
           {user?.email ? (
             <button className="navbar-logout-btn" onClick={handleLogOut}>
-              Logout
+              Logout <IoLogOutOutline size={25}/>
             </button>
-          ) : ''}
-
+          ) : (
+            ""
+          )}
         </div>
       </div>
 
@@ -74,7 +94,10 @@ export default function Navbar() {
           onClick={() => setToggleMenu(true)}
         />
 
-        <div onClick={handleGoogleSignIn} className="navbar-userDetails-mob">
+        <div
+          onClick={user?.email ? null : handleGoogleSignIn}
+          className="navbar-userDetails-mob"
+        >
           <img src={user?.email ? user?.photoURL : avatar} alt="avatar" />
         </div>
 

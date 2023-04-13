@@ -9,12 +9,35 @@ import {
 import { Link, useParams } from "react-router-dom";
 import Loading from "../../Components/loading/Loading";
 import "./singleProduct.css";
+import { db } from "../../firebase";
+import { arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
+import { AuthUser } from "../../context/AuthContext";
 
 export default function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [saveItem, setSaveItem] = useState(false);
   const [rating, setRating] = useState([]);
+  const { user } = AuthUser();
+
+  const itemId = doc(db, 'users', `${user.displayName}`);
+
+  const handleCartAdder = async () => {
+    if (user?.email) {
+      setSaveItem(true);
+      await updateDoc(itemId, {
+        savedItems: arrayUnion({
+          id: product.id,
+          title: product.title,
+          img: product.image,
+          price: product.price
+        }),
+      });
+    } else {
+      alert("Please SignIn to buy the product");
+    }
+  };
 
   useEffect(() => {
     const getProduct = async () => {
@@ -26,18 +49,16 @@ export default function SingleProduct() {
         setProduct(await response.data);
         setLoading(false);
         setRating(await response.data.rating);
-        console.log("rating", rating);
-        console.log("product", product);
       } catch (error) {
         console.log(error);
       }
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   return (
     <>
-      {loading ? ( 
+      {loading ? (
         <Loading />
       ) : (
         <div className="singleItem-full section-margin">
@@ -58,11 +79,11 @@ export default function SingleProduct() {
             <p>{product.description}</p>
 
             <span>
-              <button className="button-1">
+              <button onClick={handleCartAdder} className="button-1">
                 <FaCartPlus />
                 Add To Cart
               </button>
-              <Link to='/cart' className="button-2">
+              <Link to="/cart" className="button-2">
                 <FaShoppingCart />
                 Go To Cart
               </Link>

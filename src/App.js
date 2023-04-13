@@ -7,29 +7,37 @@ import Store from "./Pages/store/Store";
 import Contact from "./Pages/contact/Contact";
 import ErrorPage from "./Pages/errorPage/ErrorPage";
 import Footer from "./Components/footer/Footer";
-import SingleProduct from "./Pages/singleProduct/SingleProduct";
+import SingleProduct from "./Components/singleProduct/SingleProduct";
 import Cart from "./Pages/cart/Cart";
 import { AuthContextProvider } from "./context/AuthContext";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 //  api = https://api.pujakaitem.com/api/products;
 function App() {
   return (
     <>
-    <AuthContextProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/store" element={<Store />} />
-          {/* path of singleProduct connected to every product user click on */}
-          <Route path="/singleProduct/:id" element={<SingleProduct />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <AuthContextProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/store" element={<Store />} />
+            {/* path of singleProduct connected to every product user click on */}
+            <Route path="/singleProduct/:id" element={<SingleProduct />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/cart"
+              element={
+                <ProtectedRoute>
+                  <Cart />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+          <Footer />
+        </Router>
       </AuthContextProvider>
     </>
   );

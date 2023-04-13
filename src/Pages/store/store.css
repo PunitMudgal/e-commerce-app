@@ -74,15 +74,17 @@
   font-family: var(--font-bold);
   color: chocolate;
 }
-.product-card-content button {
+.product-card-content a {
   background-color: transparent;
-  font-size: 15px;
+  text-align: center;
   color: teal;
+  font-family: var(--font-para);
+  font-size: 15px;
   border: 1px solid black;
   padding: 6px;
   margin: 8px 1rem;
 }
-.product-card-content button:hover {
+.product-card-content a:hover {
   background-color: rgba(178, 178, 178, 0.525);
 }
 
@@ -130,7 +132,7 @@
   .product-card-content .product-card-content-details p {
     font-size: 15px;
   }
-  .product-card-content button {
+  .product-card-content a {
     padding: 5px;
     font-size: 14px;
   }
