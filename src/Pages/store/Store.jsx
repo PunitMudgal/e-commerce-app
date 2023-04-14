@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 export default function Store() {
   //  const apiKey = 'https://api.pujakaitem.com/api/products';
+
   const apiKey = "https://fakestoreapi.com/products";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState(data);
-  // let componentMounted = true;
 
   useEffect(() => {
     const getProducts = async () => {
@@ -53,7 +53,7 @@ export default function Store() {
             <div className="store-content-products">
               {filter.map((products) => {
                 return (
-                    <div key={products.id} className="product-card">
+                    <div key={products.id} className="product-card box-shadow3">
                       <div className="product-card-img">
                         <img src={products.image} alt={products.title} />
                       </div>

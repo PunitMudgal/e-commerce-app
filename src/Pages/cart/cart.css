@@ -31,6 +31,15 @@
   color: darkorange;
 }
 
+.product-card-content button {
+  margin-top: 5px;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: var(--font-para3);
+  color: black;
+}
+
 @media screen and (max-width: 800px) {
   .cart-full {
     padding: 2rem 1.5rem;

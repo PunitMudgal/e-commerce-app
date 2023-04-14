@@ -1,18 +1,14 @@
 import React from 'react'
 import './contact.css'
-import contactBg from '../../assets/store_9.jpg'
-// import { useForm, ValidationError } from '@formspree/react';
+import storeBg from '../../assets/store_9.jpg'
+// import purpleLady from '../../assets/fashion-purple-bg.jpg';
 
 export default function Contact() {
-  // const [state, handleSubmit] = useForm("xnqybngj");
-  // if (state.succeeded) {
-  //     return <p>Thanks for joining!</p>;
-  // }
 
   return (
     <>
       <div className='contact-background-img'>
-        <img src={contactBg} alt="store" />
+        <img src={storeBg} alt="store" />
       </div>
       <form className='contact-form'   action="https://formspree.io/f/xnqybngj"
   method="POST">

@@ -34,6 +34,7 @@ export default function SingleProduct() {
           price: product.price
         }),
       });
+      // showMessage("Item Added to Your Cart");
     } else {
       alert("Please SignIn to buy the product");
     }

@@ -6,7 +6,7 @@ import './about.css';
 export default function About() {
   return (
     <section>
-    <div className='xyz-about section-padding'>
+         <div className='xyz-about section-padding'>
       <div className='xyz-about-content slide-in-left'>
       <p className='xyz-about-content-welcome'>Welcome To</p>
       <h1>FASHION<span>CLUB</span></h1>
@@ -15,10 +15,13 @@ export default function About() {
       <div className='xyz-about-image box-shadow2 slide-in-right'>
         <img src={shopping} alt="shopping png" />
       </div>
-    </div>
+    </div> 
 
     <Brands />
 
     </section>
   )
 }
+
+
+

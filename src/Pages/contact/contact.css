@@ -40,6 +40,12 @@
   border-bottom: 2px solid gray;
   margin-bottom: 2rem;
 }
+.contact-form ::-moz-placeholder {
+  color: rgba(97, 97, 97, 0.765);
+}
+.contact-form ::placeholder {
+  color: rgba(97, 97, 97, 0.765);
+}
 .contact-form textarea {
   font-family: var(--font-para2);
   padding: 0.5rem;

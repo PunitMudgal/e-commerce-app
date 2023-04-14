@@ -13,6 +13,7 @@ const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  // const [notificationAlert, setNotificationAlert] = useState({msg: '',type: ''});
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -23,6 +24,16 @@ export const AuthContextProvider = ({ children }) => {
     signOut(auth);
   };
 
+  // const showMessage = (message, type) => {
+  //   setNotificationAlert({
+  //     msg: message,
+  //     type: type
+  //   })
+  //   setTimeout(() => {
+  //     setNotificationAlert('');
+  //   }, 3000)
+  // }
+
   // to check the state whether user is siged in or not
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -32,7 +43,7 @@ export const AuthContextProvider = ({ children }) => {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [user]);
   console.log(user);
 
   return (

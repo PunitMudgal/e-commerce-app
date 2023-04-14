@@ -7,7 +7,6 @@ import "./cart.css";
 
 export default function Cart() {
   const [items, setItems] = useState([]);
-
   const { user } = AuthUser();
 
   useEffect(() => {
@@ -24,16 +23,16 @@ export default function Cart() {
       await updateDoc(itemRef, {
         savedItems: result,
       });
-
+      // showMessage("Item Removed", "success");
     } catch (error) {
       console.log(error);
     }
   };
   console.log("items", items);
 
-
   return (
     <>
+      {/* <Notification /> */}
       <div className="cart-full ">
         <h5>
           Welcome <span>{user.displayName}</span>
@@ -43,7 +42,7 @@ export default function Cart() {
         {items.length > 0 ? (
           <div className="store-content-products">
             {items.map((prod) => (
-              <div key={prod.id} className="product-card">
+              <div key={prod.id} className="product-card box-shadow3">
                 <div className="product-card-img">
                   <img src={prod.img} alt={prod.title} />
                 </div>
@@ -52,9 +51,9 @@ export default function Cart() {
                     <h4>{prod.title}</h4>
                     <p>$ {prod.price}/- only</p>
                   </div>
-                  <button onClick={() => removeFromCart(prod.id)}>
-                    Remove Item
-                  </button>
+                    <button onClick={() => removeFromCart(prod.id)}>
+                      Remove Item
+                    </button>
                 </div>
               </div>
             ))}
